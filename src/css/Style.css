@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+body {
+  font-size: calc(10px + 2vmin);
+  background-color: #f4f4f4;
+  color: black;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #24292e;
+  border-bottom: solid 1px black;
+  background-color: #24292e;
+  color: black;
+  padding: 10px 20px;
+}
+nav a {
+  margin-right: 10px;
+}
+nav .active {
+  text-decoration: underline;
+}
+nav .github {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.search .form-search {
+  border: solid 1.4px #e7e7e7;
+  border-radius: 3px;
+  background-color: #e7e7e7;
+  display: block;
+  width: 80%;
+  height: 30px;
+  margin: 10px auto;
+}
+.search .form-button {
+  width: 90px;
+  height: 40px;
+  border: solid 2.4px #bfbfbf;
+  font-weight: bold;
+  color: #bfbfbf;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.container {
+  min-height: 83vh;
+}
+
+@media (min-width: 748px) {
+  body {
+    font-size: 18px;
+  }
+
+  nav {
+    text-align: left;
+    flex-direction: row;
+    padding: 20px;
+  }
+}
+
+/*# sourceMappingURL=Style.css.map */

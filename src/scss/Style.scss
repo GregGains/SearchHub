@@ -1,0 +1,74 @@
+@import "./partials/variables", "./partials/mixins", "./partials/functions",
+  "./partials/resets";
+
+body {
+  font-size: calc(10px + 2vmin);
+  background-color: #f4f4f4;
+  color: black;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #24292e;
+  border-bottom: solid 1px black;
+  background-color: #24292e;
+  color: black;
+  padding: 10px 20px;
+
+  a {
+    margin-right: 10px;
+  }
+  .active {
+    text-decoration: underline;
+  }
+  .github {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+}
+
+.search {
+  .form-search {
+    border: solid 1.4px $form-color;
+    border-radius: 3px;
+    background-color: $form-color;
+    display: block;
+    width: 80%;
+    height: 30px;
+    margin: 10px auto;
+  }
+  .form-button {
+    width: 90px;
+    height: 40px;
+    border: solid 2.4px $button-color;
+    font-weight: bold;
+    color: $button-color;
+    border-radius: 5px;
+    background-color: white;
+  }
+}
+
+.container {
+  min-height: 83vh;
+}
+
+@media (min-width: 748px) {
+  body {
+    font-size: 18px;
+  }
+  nav {
+    text-align: left;
+    flex-direction: row;
+    padding: 20px;
+  }
+  .search {
+  }
+}
