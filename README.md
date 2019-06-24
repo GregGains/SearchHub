@@ -1,73 +1,52 @@
-<<<<<<< HEAD
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- TITLE AREA -->
 
-## Available Scripts
+# **Github Search**
 
-In the project directory, you can run:
+<!-- ABSTRACT / EXPLANATION  -->
 
-### `npm start`
+## **Abstract:**
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Building a React application that can search Github accounts using the Github Api. This app will display public information of all Github accounts with an easy to use GUI.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+<!-- INSTALLATION AREA -->
 
-### `npm test`
+## **Installation Instructions:**
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open your terminal
 
-### `npm run build`
+Copy and paste the following lines into your terminal
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/GregGains/github-search.git
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```bash
+cd github-finder/
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+```bash
+npm install node-sass
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- Live App  AREA  -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<!-- PROJECT BACKGROUND AREA -->
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## **Project Background:**
 
-## Learn More
+_This project will further showcase my web development skills in working with React and RESTful API's._
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## **Project Goals:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-=======
-# github-search
-A Github search app that can find specific accounts and display public information
->>>>>>> 62c4157bf27f625db29960382d6eb1b1082e0ec3
+    * Write a React app from scratch
+    * Show knowledge of state and props
+    * Implement ES6 features
+    * Write modular, reusable code that follows SRP guidelines (Single Responsibility Principle)
