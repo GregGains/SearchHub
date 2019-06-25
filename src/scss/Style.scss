@@ -57,6 +57,32 @@ nav {
   }
 }
 
+.users-list {
+  padding-left: 0;
+  li {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    border-top: solid 1px lightgrey;
+    padding: 10px;
+  }
+  h3 {
+    flex: 1;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+    border: solid 1px lightgrey;
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+  a {
+    @include mobile-button-styles {
+      padding-top: 25px;
+    }
+  }
+}
+
 .container {
   min-height: 83vh;
 }
@@ -77,15 +103,16 @@ nav {
     }
   }
 
-  ul {
+  .users-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 40px;
     width: 80%;
     margin: 100px auto;
     li {
+      display: grid;
       border: solid 2px lightgrey;
-      box-shadow: 1px 1px 15px lightgrey;
+      box-shadow: 1px 1px 10px lightgrey;
       opacity: 0.5;
       padding: 15px;
       list-style: none;
@@ -98,12 +125,16 @@ nav {
     }
 
     a {
+      margin: 0 auto;
+      @include desktop-button-styles;
+      text-decoration: none;
     }
     img {
       width: 70px;
       height: 70px;
       border: solid 1px lightgrey;
       border-radius: 50%;
+      margin: 0 auto;
       object-fit: contain;
     }
   }

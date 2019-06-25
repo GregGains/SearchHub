@@ -61,6 +61,35 @@ nav .github {
   background-color: white;
 }
 
+.users-list {
+  padding-left: 0;
+}
+.users-list li {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  border-top: solid 1px lightgrey;
+  padding: 10px;
+}
+.users-list h3 {
+  flex: 1;
+}
+.users-list img {
+  width: 60px;
+  height: 60px;
+  border: solid 1px lightgrey;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+.users-list a {
+  width: 80px;
+  font-size: 14px;
+  color: grey;
+  margin: 0 auto;
+  text-decoration: underline;
+  padding-top: 25px;
+}
+
 .container {
   min-height: 83vh;
 }
@@ -80,31 +109,43 @@ nav .github {
     margin-top: 100px;
   }
 
-  ul {
+  .users-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 40px;
     width: 80%;
     margin: 100px auto;
   }
-  ul li {
+  .users-list li {
+    display: grid;
     border: solid 2px lightgrey;
-    box-shadow: 1px 1px 15px lightgrey;
+    box-shadow: 1px 1px 10px lightgrey;
     opacity: 0.5;
     padding: 15px;
     list-style: none;
   }
-  ul li:hover {
+  .users-list li:hover {
     transition: all 0.4s;
     opacity: 1;
     margin: 5px;
     transform: scale(1.15);
   }
-  ul img {
+  .users-list a {
+    margin: 0 auto;
+    width: 90px;
+    height: 30px;
+    padding-top: 3px;
+    border-radius: 3px;
+    background-color: grey;
+    color: white;
+    text-decoration: none;
+  }
+  .users-list img {
     width: 70px;
     height: 70px;
     border: solid 1px lightgrey;
     border-radius: 50%;
+    margin: 0 auto;
     object-fit: contain;
   }
 }

@@ -4,10 +4,8 @@ import Users from "./Users";
 export default function Home(props) {
   return (
     <div className="home">
-      <h1>Home</h1>
-
       <h2>Popular Repositories</h2>
-      <ul>
+      <ul className="users-list">
         {props.users.map(user => (
           <Users
             key={user.id}
