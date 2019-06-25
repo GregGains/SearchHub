@@ -1,23 +1,35 @@
 import React from "react";
 import Users from "./Users";
+import Spinner from "./Spinner";
 
-export default function Home(props) {
-  return (
-    <div className="home">
-      <h2>Popular Repositories</h2>
-      <ul className="users-list">
-        {props.users.map(user => (
-          <Users
-            key={user.id}
-            url={user.html_url}
-            avatar={user.avatar_url}
-            login={user.login}
-            followers={user.followers_url}
-            following={user.following_url}
-            events={user.events_url}
-          />
-        ))}
-      </ul>
-    </div>
-  );
+
+
+export default function Home({users, loading}) {
+
+  if (loading) {
+      
+    return <Spinner />
+  
+} else {
+    return (
+        <div className="home">
+          <h2>Popular Repositories</h2>
+          <ul className="users-list">
+            {users.map(user => (
+              <Users
+                key={user.id}
+                url={user.html_url}
+                avatar={user.avatar_url}
+                login={user.login}
+                followers={user.followers_url}
+                following={user.following_url}
+                events={user.events_url}
+              />
+            ))}
+          </ul>
+        </div>
+      );
+  }
+
+  
 }

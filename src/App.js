@@ -7,6 +7,7 @@ import Search from "./components/Search";
 import About from "./components/About";
 import "./css/Style.css";
 
+
 class App extends React.Component {
   state = {
     users: [],
@@ -15,8 +16,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.setState({ loading: true });
-    let token = "0d8107707440401facb408e1326dbec1";
-    fetch("https:/api.github.com/users", { apikey: token })
+    fetch("https:/api.github.com/users", { apikey: process.env.REACT_APP_GITHUB_CLIENT_ID})
       .then(res => res.json())
       .then(res => this.setState({ users: res, loading: false }))
       .catch(error => console.log(`Sorry, there's been an error ${error}`));
@@ -27,11 +27,12 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="App">
           <Header />
+         
           <div className="container">
             <Route
               exact
               path="/"
-              render={() => <Home users={this.state.users} />}
+              render={() => <Home users={this.state.users} loading={this.state.loading} />}
             />
             <Route exact path="/Search" render={() => <Search />} />
             <Route exact path="/About" component={About} />

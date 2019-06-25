@@ -11,7 +11,7 @@ body {
 
 body {
   font-size: calc(10px + 2vmin);
-  background-color: #f4f4f4;
+  background-color: white;
   color: black;
 }
 
@@ -92,6 +92,11 @@ nav .github {
 
 .container {
   min-height: 83vh;
+}
+
+.spinner {
+  width: 300px;
+  margin: 0 auto;
 }
 
 @media (min-width: 748px) {
