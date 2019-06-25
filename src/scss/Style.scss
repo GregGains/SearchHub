@@ -10,7 +10,7 @@ body {
 a {
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 nav {
@@ -19,11 +19,12 @@ nav {
   border: solid 1px #24292e;
   border-bottom: solid 1px black;
   background-color: #24292e;
-  color: black;
+
   padding: 10px 20px;
 
   a {
     margin-right: 10px;
+    color: white;
   }
   .active {
     text-decoration: underline;
@@ -62,13 +63,48 @@ nav {
 
 @media (min-width: 748px) {
   body {
-    font-size: 18px;
+    font-size: 14px;
   }
   nav {
     text-align: left;
     flex-direction: row;
     padding: 20px;
   }
-  .search {
+
+  .home {
+    h2 {
+      margin-top: 100px;
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    width: 80%;
+    margin: 100px auto;
+    li {
+      border: solid 2px lightgrey;
+      box-shadow: 1px 1px 15px lightgrey;
+      opacity: 0.5;
+      padding: 15px;
+      list-style: none;
+      &:hover {
+        transition: all 0.4s;
+        opacity: 1;
+        margin: 5px;
+        transform: scale(1.15);
+      }
+    }
+
+    a {
+    }
+    img {
+      width: 70px;
+      height: 70px;
+      border: solid 1px lightgrey;
+      border-radius: 50%;
+      object-fit: contain;
+    }
   }
 }
