@@ -13,8 +13,12 @@ export default function Home({users, loading}) {
 } else {
     return (
         <div className="home">
+          <h1>Github Finder</h1>
           <h2>Popular Repositories</h2>
           <ul className="users-list">
+            
+            
+            
             {users.map(user => (
               <Users
                 key={user.id}
