@@ -54,6 +54,7 @@ nav {
     border: solid 1px #444;
     background-color: #444;
     color: white;
+    cursor: pointer;
   }
 }
 
@@ -90,6 +91,20 @@ nav {
 .spinner {
   width: 300px;
   margin: 0 auto;
+}
+.singleuser {
+  margin: 200px auto;
+  font-weight: bold;
+  border-bottom: 2px solid lightgrey;
+  .bio {
+    font-weight: normal;
+  }
+  img {
+    width: 150px;
+    height: 150px;
+    border: solid 1px lightgrey;
+    border-radius: 50%;
+  }
 }
 
 @media (min-width: 748px) {

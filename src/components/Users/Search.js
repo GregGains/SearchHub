@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Users from "./Users";
-import Noresult from "./Noresult";
-import Spinner from "./Spinner";
+import Spinner from "./../Includes/Spinner"
 export default class Search extends Component {
   state = {
     value: ""
@@ -18,14 +17,15 @@ export default class Search extends Component {
   };
 
   render() {
-    const { searchedUsers, isLoading } = this.props;
+    const { searchedUsers, isLoading, getuser } = this.props;
+
     if (isLoading) {
       return <Spinner />;
     } else {
       
         return (
           <div className="search">
-            <h1 />
+           
             <form method="GET" onSubmit={this.handleFormSubmit}>
               <input
                 type="text"
@@ -44,6 +44,7 @@ export default class Search extends Component {
                   avatar={user.avatar_url}
                   url={user.html_url}
                   login={user.login}
+                  getuser={getuser}
                 />
               ))}
             </ul>

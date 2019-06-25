@@ -1,6 +1,6 @@
 import React from "react";
-import Users from "./Users";
-import Spinner from "./Spinner";
+import Users from "./Users/Users";
+import Spinner from "./Includes/Spinner";
 
 
 
