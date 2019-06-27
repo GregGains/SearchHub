@@ -68,7 +68,7 @@ export default class User extends React.Component {
               </p>
             </div>
             <ul className="repositories">
-              <h1>Repos</h1>
+              {public_repos ? <h1>Repos</h1> : "" }
               {repos.map(repo => (
                 <Repos
                   key={repo.id}
