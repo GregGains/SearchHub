@@ -33,11 +33,11 @@ export default class User extends React.Component {
       return (
         <React.Fragment>
           <section className="singleuser">
-          
-              
             <div className="user-display">
+              <h1 className="login">{login}</h1>
               <img src={avatar_url} title="profile picture" alt={name} />
               <h1>{name}</h1>
+
               {location ? <h3>Location: {location}</h3> : ""}
               <p>
                 {bio ? (
@@ -66,28 +66,23 @@ export default class User extends React.Component {
                   <span className="nothireable">No</span>
                 )}
               </p>
-              
-
-             
             </div>
             <ul className="repositories">
-                <h1>Repos</h1>
-                {repos.map(repo => (
-                  <Repos
-                    key={repo.id}
-                    name={repo.name}
-                    url={repo.html_url}
-                    created={repo.created_at}
-                  />
-                ))}
-              </ul>
-       
-            <Link className="back" to="/Search" onClick={clearUserState} >
+              <h1>Repos</h1>
+              {repos.map(repo => (
+                <Repos
+                  key={repo.id}
+                  name={repo.name}
+                  url={repo.html_url}
+                  created={repo.created_at}
+                />
+              ))}
+            </ul>
+
+            <Link className="back" to="/Search" onClick={clearUserState}>
               Back To Search
             </Link>
-            
           </section>
-       
         </React.Fragment>
       );
     }

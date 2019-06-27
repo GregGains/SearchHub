@@ -99,7 +99,7 @@ nav .github {
 }
 
 .container {
-  min-height: 83vh;
+  min-height: 48vh;
 }
 
 .spinner {
@@ -109,7 +109,7 @@ nav .github {
 
 .singleuser {
   text-align: center;
-  margin: 200px auto;
+  margin: 50px auto;
   padding: 5px;
 }
 .singleuser .bio {
@@ -125,9 +125,11 @@ nav .github {
   border-radius: 50%;
 }
 .singleuser .hireable {
+  font-weight: bold;
   color: green;
 }
 .singleuser .nothireable {
+  font-weight: bold;
   color: red;
 }
 .singleuser .back {
@@ -150,6 +152,13 @@ nav .github {
   word-break: break-all;
   width: 80%;
   margin: 0 auto;
+}
+.singleuser h1 {
+  font-size: 1.6rem;
+}
+.singleuser .login {
+  text-transform: capitalize;
+  font-size: 3.2rem;
 }
 
 .searched-list {
@@ -199,7 +208,7 @@ nav .github {
 }
 
 .about {
-  margin: 200px auto;
+  margin-top: 230px;
 }
 .about h1 {
   font-size: 3rem;
@@ -214,6 +223,10 @@ nav .github {
     text-align: left;
     flex-direction: row;
     padding: 20px;
+  }
+
+  .about {
+    margin: 200px auto;
   }
 
   .home h1 {
@@ -293,8 +306,13 @@ nav .github {
     width: 250px;
     height: 250px;
   }
+  .singleuser .login {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 37px;
+  }
   .singleuser h1 {
-    font-size: 33px;
+    font-size: 30px;
   }
   .singleuser .bio {
     display: block;
@@ -337,9 +355,10 @@ nav .github {
 
   .searched-list {
     border: none;
+    margin: 300px auto;
     display: flex;
     flex-wrap: wrap;
-    margin: 100px auto;
+    margin: 250px auto;
   }
   .searched-list li {
     border: solid 2px lightgrey;
