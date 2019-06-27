@@ -45,6 +45,7 @@ nav {
     width: 80%;
     height: 30px;
     margin: 10px auto;
+    margin-top: 150px;
   }
   .form-button {
     height: 40px;
@@ -135,6 +136,10 @@ nav {
   }
 }
 
+.about {
+  margin: 200px auto;
+}
+
 @media (min-width: 738px) {
   body {
     font-size: 14px;
@@ -206,9 +211,17 @@ nav {
   }
 
   .singleuser {
-    width: 900px;
+    margin: 20px auto;
+    border: solid 5px #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px darken(#f4f4f4, 13%);
+    width: 75%;
+    padding: 100px;
+
+    .user-display {
+      text-align: left;
+    }
     img {
-      float: left;
       display: inline-block;
       width: 250px;
       height: 250px;
@@ -216,13 +229,26 @@ nav {
     h1 {
       font-size: 33px;
     }
-  }
+    .bio {
+    }
 
+    .back {
+      display: inline-block;
+      @include desktop-button-styles;
+      width: 120px;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
   .searched-list {
     border: none;
     @include search-desktop-styles {
+      :first-child {
+        border-top: solid 2px lightgrey;
+      }
       li {
         display: block;
+        border-radius: 5px;
       }
       a {
         padding: 5px;

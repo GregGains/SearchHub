@@ -50,6 +50,7 @@ nav .github {
   width: 80%;
   height: 30px;
   margin: 10px auto;
+  margin-top: 150px;
 }
 .search .form-button {
   height: 40px;
@@ -178,6 +179,10 @@ nav .github {
   margin: 37px auto;
 }
 
+.about {
+  margin: 200px auto;
+}
+
 @media (min-width: 738px) {
   body {
     font-size: 14px;
@@ -247,16 +252,35 @@ nav .github {
   }
 
   .singleuser {
-    width: 900px;
+    margin: 20px auto;
+    border: solid 5px #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px lightgray;
+    width: 75%;
+    padding: 100px;
+  }
+  .singleuser .user-display {
+    text-align: left;
   }
   .singleuser img {
-    float: left;
     display: inline-block;
     width: 250px;
     height: 250px;
   }
   .singleuser h1 {
     font-size: 33px;
+  }
+  .singleuser .back {
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    padding-top: 5px;
+    border-radius: 3px;
+    background-color: grey;
+    color: white;
+    width: 120px;
+    text-decoration: none;
+    text-align: center;
   }
 
   .searched-list {
@@ -298,8 +322,12 @@ nav .github {
     margin: 0 auto;
     object-fit: contain;
   }
+  .searched-list :first-child {
+    border-top: solid 2px lightgrey;
+  }
   .searched-list li {
     display: block;
+    border-radius: 5px;
   }
   .searched-list a {
     padding: 5px;

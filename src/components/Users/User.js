@@ -31,11 +31,12 @@ export default class User extends React.Component {
             return (
                 <React.Fragment>
                     <section className="singleuser">
+                    <div className="user-display">
                         <img src={avatar_url} title="profile picture" alt={name} />
                         <h1>{name}</h1>
                         {location ? <h3>Location: {location}</h3>: ""}
                         <p>
-                            {bio ? <span className="bio">Bio: {bio} <br /></span> : "" }
+                            {bio ? <span className="bio">Bio: {bio}<br /></span> : "" }
                             {blog ? <span>Blog: {blog}<br /></span> : ""}
                             Followers:  {followers} <br />
                             Following:  {following} <br />
@@ -44,8 +45,9 @@ export default class User extends React.Component {
                             {hireable ? <span className="hireable">Yes</span> : <span className="nothireable">No</span> }
 
                         </p>
-                        <Link className="back" to="/Search">Back To Search</Link>
                         
+                        </div>
+                        <Link className="back" to="/Search">Back To Search</Link>
                     </section>
                 </React.Fragment>
             )
