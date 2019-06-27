@@ -100,8 +100,13 @@ nav {
   margin: 0 auto;
 }
 .singleuser {
+  text-align: center;
   margin: 200px auto;
+  padding: 5px;
   .bio {
+    width: 450px;
+    margin: 0 auto;
+    text-align: center;
     font-weight: normal;
   }
   img {
@@ -118,6 +123,22 @@ nav {
   }
   .back {
     @include mobile-button-styles;
+  }
+
+  .repositories {
+    padding: 0;
+    text-align: center;
+    p {
+      text-transform: capitalize;
+      font-weight: bold;
+    }
+  }
+
+  a {
+    display: block;
+    word-break: break-all;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
@@ -224,6 +245,7 @@ nav {
     box-shadow: 1px 1px 20px darken(#f4f4f4, 13%);
     width: 75%;
     padding: 100px;
+    max-width: 1500px;
 
     .user-display {
       text-align: left;
@@ -237,14 +259,43 @@ nav {
       font-size: 33px;
     }
     .bio {
+      display: block;
+      width: 300px;
+      margin: inherit;
+      text-align: left;
     }
 
     .back {
-      display: inline-block;
+      clear: both;
+      display: block;
+
       @include desktop-button-styles;
       width: 120px;
       text-decoration: none;
       text-align: center;
+    }
+
+    .repositories {
+      display: inline-block;
+      line-height: 0.8;
+      width: 100%;
+      text-align: right;
+      margin: -600px auto;
+      padding: 0;
+
+      p {
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+
+      a {
+        display: inline;
+        
+        &:hover {
+          transition: all 0.3s;
+          color: red;
+        }
+      }
     }
   }
   .searched-list {
@@ -263,6 +314,19 @@ nav {
       h5 {
         margin: 15px auto;
       }
+    }
+  }
+}
+
+@media (min-width: 738px) and (max-width: 1086px) {
+  .singleuser {
+    .repositories {
+      text-align: left;
+      margin: 0 auto;
+      margin-bottom: 100px;
+    }
+
+    img {
     }
   }
 }

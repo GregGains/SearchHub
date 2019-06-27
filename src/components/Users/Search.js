@@ -17,7 +17,7 @@ export default class Search extends Component {
   };
 
   render() {
-    const { searchedUsers, isLoading, getuser } = this.props;
+    const { searchedUsers, isLoading, getuser, getuserrepos } = this.props;
 
     if (isLoading) {
       return <Spinner />;

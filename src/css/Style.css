@@ -108,9 +108,14 @@ nav .github {
 }
 
 .singleuser {
+  text-align: center;
   margin: 200px auto;
+  padding: 5px;
 }
 .singleuser .bio {
+  width: 450px;
+  margin: 0 auto;
+  text-align: center;
   font-weight: normal;
 }
 .singleuser img {
@@ -131,6 +136,20 @@ nav .github {
   color: grey;
   margin: 0 auto;
   text-decoration: underline;
+}
+.singleuser .repositories {
+  padding: 0;
+  text-align: center;
+}
+.singleuser .repositories p {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.singleuser a {
+  display: block;
+  word-break: break-all;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .searched-list {
@@ -264,6 +283,7 @@ nav .github {
     box-shadow: 1px 1px 20px lightgray;
     width: 75%;
     padding: 100px;
+    max-width: 1500px;
   }
   .singleuser .user-display {
     text-align: left;
@@ -276,8 +296,15 @@ nav .github {
   .singleuser h1 {
     font-size: 33px;
   }
+  .singleuser .bio {
+    display: block;
+    width: 300px;
+    margin: inherit;
+    text-align: left;
+  }
   .singleuser .back {
-    display: inline-block;
+    clear: both;
+    display: block;
     width: 90px;
     height: 30px;
     padding-top: 5px;
@@ -287,6 +314,25 @@ nav .github {
     width: 120px;
     text-decoration: none;
     text-align: center;
+  }
+  .singleuser .repositories {
+    display: inline-block;
+    line-height: 0.8;
+    width: 100%;
+    text-align: right;
+    margin: -600px auto;
+    padding: 0;
+  }
+  .singleuser .repositories p {
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+  .singleuser .repositories a {
+    display: inline;
+  }
+  .singleuser .repositories a:hover {
+    transition: all 0.3s;
+    color: red;
   }
 
   .searched-list {
@@ -340,6 +386,13 @@ nav .github {
   }
   .searched-list h5 {
     margin: 15px auto;
+  }
+}
+@media (min-width: 738px) and (max-width: 1086px) {
+  .singleuser .repositories {
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 100px;
   }
 }
 

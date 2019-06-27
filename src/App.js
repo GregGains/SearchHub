@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Header/Footer";
 import Home from "./components/Home";
 import Search from "./components/Users/Search";
-import User from "./components/Users/User"
+import User from "./components/Users/User";
 import About from "./components/About";
 import "./css/Style.css";
 
@@ -16,6 +16,7 @@ class App extends React.Component {
     users: [],
     searchedUsers: [],
     searchedUser: [],
+    repo: [],
     loading: false
   };
 
@@ -26,7 +27,11 @@ class App extends React.Component {
   //FETCH RECENT USERS ON HOME PAGE
   componentDidMount = () => {
     this.setState({ loading: true });
-    fetch(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`)
+    fetch(
+      `https://api.github.com/users?client_id=${
+        process.env.REACT_APP_GITHUB_CLIENT_ID
+      }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+    )
       .then(res => res.json())
       .then(res => this.setState({ users: res, loading: false }))
       .catch(error => console.log(`Sorry, there's been an error ${error}`));
@@ -35,7 +40,11 @@ class App extends React.Component {
   formSubmit = value => {
     if (value !== "") {
       this.setState({ loading: true });
-      fetch(`https://api.github.com/search/users?q=${value}&?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`)
+      fetch(
+        `https://api.github.com/search/users?q=${value}&?client_id=${
+          process.env.REACT_APP_GITHUB_CLIENT_ID
+        }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+      )
         .then(res => res.json())
         .then(res =>
           this.setState({ searchedUsers: res.items, loading: false })
@@ -49,13 +58,37 @@ class App extends React.Component {
   //GET SINGLE GITHUB USER
   getUser = username => {
     this.setState({ loading: true });
-    fetch(`https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`)
+    fetch(
+      `https://api.github.com/users/${username}?client_id=${
+        process.env.REACT_APP_GITHUB_CLIENT_ID
+      }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+    )
       .then(res => res.json())
       .then(res => this.setState({ searchedUser: res, loading: false }))
       .catch(error => console.log(`Sorry, there's been an error ${error}`));
   };
 
-  //GET SINGLE USER REPOSITORIES 
+  //GET SINGLE USER REPOSITORIES
+  getUserRepos = username => {
+    this.setState({ loading: true });
+    fetch(
+      `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${
+        process.env.REACT_APP_GITHUB_CLIENT_ID
+      }&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+    )
+      .then(res => res.json())
+      .then(res => this.setState({ repo: res, loading: false }))
+      .catch(error => console.log(`Sorry, there's been an error ${error}`));
+  };
+
+  //CLEAR SINGLE USER STATE
+  clearUserState = () => {
+    this.setState({
+      searchedUser: [],
+      searchedUsers: [],
+      repo: []
+    });
+  };
 
   // ===============================
   // RENDER
@@ -65,7 +98,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Header />
+          <Header clearUserState={this.clearUserState} />
 
           <div className="container">
             <Route
@@ -88,9 +121,20 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route exact path="/user/:login" render={(props) => <User {...props} 
-                                                                      getuser={this.getUser} 
-                                                                      user={this.state.searchedUser} /> } />
+            <Route
+              exact
+              path="/user/:login"
+              render={props => (
+                <User
+                  {...props}
+                  getuser={this.getUser}
+                  getuserrepos={this.getUserRepos}
+                  clearUserState={this.clearUserState}
+                  repos={this.state.repo}
+                  user={this.state.searchedUser}
+                />
+              )}
+            />
             <Route exact path="/About" component={About} />
           </div>
           <Footer />
