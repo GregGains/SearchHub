@@ -9,9 +9,9 @@ import About from "./components/About";
 import "./css/Style.css";
 
 class App extends React.Component {
-  // ==========================
+  // ==============================
   // STATE
-  //===========================
+  //===============================
   state = {
     users: [],
     searchedUsers: [],
@@ -19,9 +19,9 @@ class App extends React.Component {
     loading: false
   };
 
-  // ==========================
+  // ==============================
   // METHODS
-  // ==========================
+  // ==============================
 
   //FETCH RECENT USERS ON HOME PAGE
   componentDidMount = () => {
@@ -54,6 +54,8 @@ class App extends React.Component {
       .then(res => this.setState({ searchedUser: res, loading: false }))
       .catch(error => console.log(`Sorry, there's been an error ${error}`));
   };
+
+  //GET SINGLE USER REPOSITORIES 
 
   // ===============================
   // RENDER

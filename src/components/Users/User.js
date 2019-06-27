@@ -1,5 +1,6 @@
 import React from 'react'
-
+import { Link } from "react-router-dom";
+import Spinner from "../../img/spinner.gif";
 export default class User extends React.Component {
  
     componentDidMount(){
@@ -24,21 +25,30 @@ export default class User extends React.Component {
 
         const { loading } = this.props;
 
-        return (
-            <React.Fragment>
-                <section className="singleuser">
-                    <img src={avatar_url} title="profile picture" alt={name} />
-                    <h3>{name}</h3>
-                    <p><span className="bio">{bio}</span> <br />
-                        {blog} <br />
-                        Followers:  {followers} <br />
-                        Following:  {following} <br />
-                        Repositories:   {public_repos} <br />
-                        {hireable}
+        if (loading){
+            return (<Spinner />)
+        } else {
+            return (
+                <React.Fragment>
+                    <section className="singleuser">
+                        <img src={avatar_url} title="profile picture" alt={name} />
+                        <h1>{name}</h1>
+                        {location ? <h3>Location: {location}</h3>: ""}
+                        <p>
+                            {bio ? <span className="bio">Bio: {bio} <br /></span> : "" }
+                            {blog ? <span>Blog: {blog}<br /></span> : ""}
+                            Followers:  {followers} <br />
+                            Following:  {following} <br />
+                            Repositories:   {public_repos} <br />
+                            Hireable {" "} 
+                            {hireable ? <span className="hireable">Yes</span> : <span className="nothireable">No</span> }
 
-                    </p>
-                </section>
-            </React.Fragment>
-        )
+                        </p>
+                        <Link className="back" to="/Search">Back To Search</Link>
+                        
+                    </section>
+                </React.Fragment>
+            )
+    }
     }
 }

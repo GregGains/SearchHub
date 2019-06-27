@@ -10,9 +10,84 @@
 @mixin desktop-button-styles {
   width: 90px;
   height: 30px;
-  padding-top: 3px;
+  padding-top: 5px;
   border-radius: 3px;
   background-color: grey;
 
   color: white;
+}
+
+@mixin search-mobile-styles {
+  list-style: none;
+  border: solid 10px #f4f4f4;
+
+  margin: 100px auto;
+  padding: 0;
+  :first-child {
+    border-top: none;
+  }
+  li {
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto;
+
+    border-top: 1px solid lightgrey;
+
+    display: flex;
+    h5 {
+      flex: 1;
+    }
+  }
+
+  img {
+    width: 45px;
+    height: 45px;
+    border: solid 1px rgb(153, 144, 144);
+    border-radius: 50%;
+    margin-top: 15px;
+  }
+  a {
+    display: inline-block;
+    padding-top: 25px;
+    @include mobile-button-styles;
+  }
+  @content;
+}
+
+@mixin search-desktop-styles {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 100px auto;
+
+  li {
+    border: solid 2px lightgrey;
+    box-shadow: 1px 1px 10px lightgrey;
+    width: 500px;
+    margin: 10px auto;
+
+    opacity: 0.5;
+    padding: 15px;
+    list-style: none;
+    &:hover {
+      transition: all 0.4s;
+      opacity: 1;
+      transform: scale(1.15);
+    }
+  }
+  a {
+    margin: 0 auto;
+
+    @include desktop-button-styles;
+    display: inline-block;
+    text-decoration: none;
+  }
+  img {
+    width: 70px;
+    height: 70px;
+    border: solid 1px lightgrey;
+    border-radius: 50%;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+  @content;
 }

@@ -64,6 +64,10 @@ nav .github {
 
 .users-list {
   padding-left: 0;
+  border: solid 15px #f4f4f4;
+}
+.users-list :first-child {
+  border: none;
 }
 .users-list li {
   display: flex;
@@ -72,8 +76,10 @@ nav .github {
   border-top: solid 1px lightgrey;
   padding: 10px;
 }
-.users-list h3 {
+.users-list h5 {
   flex: 1;
+  text-transform: capitalize;
+  margin: 25px auto;
 }
 .users-list img {
   width: 60px;
@@ -102,8 +108,6 @@ nav .github {
 
 .singleuser {
   margin: 200px auto;
-  font-weight: bold;
-  border-bottom: 2px solid lightgrey;
 }
 .singleuser .bio {
   font-weight: normal;
@@ -114,8 +118,67 @@ nav .github {
   border: solid 1px lightgrey;
   border-radius: 50%;
 }
+.singleuser .hireable {
+  color: green;
+}
+.singleuser .nothireable {
+  color: red;
+}
+.singleuser .back {
+  width: 80px;
+  font-size: 14px;
+  color: grey;
+  margin: 0 auto;
+  text-decoration: underline;
+}
 
-@media (min-width: 748px) {
+.searched-list {
+  text-transform: capitalize;
+  list-style: none;
+  border: solid 10px #f4f4f4;
+  margin: 100px auto;
+  padding: 0;
+}
+.searched-list :first-child {
+  border-top: none;
+}
+.searched-list li {
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid lightgrey;
+  display: flex;
+}
+.searched-list li h5 {
+  flex: 1;
+}
+.searched-list img {
+  width: 45px;
+  height: 45px;
+  border: solid 1px #999090;
+  border-radius: 50%;
+  margin-top: 15px;
+}
+.searched-list a {
+  display: inline-block;
+  padding-top: 25px;
+  width: 80px;
+  font-size: 14px;
+  color: grey;
+  margin: 0 auto;
+  text-decoration: underline;
+}
+.searched-list img {
+  margin: 20px auto;
+}
+.searched-list a {
+  padding: 40px 0px;
+}
+.searched-list h5 {
+  margin: 37px auto;
+}
+
+@media (min-width: 738px) {
   body {
     font-size: 14px;
   }
@@ -136,6 +199,10 @@ nav .github {
     grid-gap: 40px;
     width: 80%;
     margin: 100px auto;
+    border: none;
+  }
+  .users-list :first-child {
+    border: solid 2px lightgrey;
   }
   .users-list li {
     display: grid;
@@ -148,14 +215,16 @@ nav .github {
   .users-list li:hover {
     transition: all 0.4s;
     opacity: 1;
-    margin: 5px;
     transform: scale(1.15);
+  }
+  .users-list li h5 {
+    margin: 10px auto;
   }
   .users-list a {
     margin: 0 auto;
     width: 90px;
     height: 30px;
-    padding-top: 3px;
+    padding-top: 5px;
     border-radius: 3px;
     background-color: grey;
     color: white;
@@ -175,6 +244,68 @@ nav .github {
   }
   .search .form-search {
     width: 50%;
+  }
+
+  .singleuser {
+    width: 900px;
+  }
+  .singleuser img {
+    float: left;
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+  }
+  .singleuser h1 {
+    font-size: 33px;
+  }
+
+  .searched-list {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px auto;
+  }
+  .searched-list li {
+    border: solid 2px lightgrey;
+    box-shadow: 1px 1px 10px lightgrey;
+    width: 500px;
+    margin: 10px auto;
+    opacity: 0.5;
+    padding: 15px;
+    list-style: none;
+  }
+  .searched-list li:hover {
+    transition: all 0.4s;
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  .searched-list a {
+    margin: 0 auto;
+    width: 90px;
+    height: 30px;
+    padding-top: 5px;
+    border-radius: 3px;
+    background-color: grey;
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .searched-list img {
+    width: 70px;
+    height: 70px;
+    border: solid 1px lightgrey;
+    border-radius: 50%;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+  .searched-list li {
+    display: block;
+  }
+  .searched-list a {
+    padding: 5px;
+  }
+  .searched-list h5 {
+    margin: 15px auto;
   }
 }
 

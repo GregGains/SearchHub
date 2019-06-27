@@ -37,9 +37,10 @@ export default class Search extends Component {
 
               <input type="submit" className="form-button" value="Search" />
             </form>
-            <ul className="users-list">
+            <ul className="searched-list">
               {searchedUsers.map(user => (
                 <Users
+                  
                   key={user.id}
                   avatar={user.avatar_url}
                   url={user.html_url}
