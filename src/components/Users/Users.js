@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Users({ avatar, login, url, getuser }) {
+export default function Users({ avatar, login }) {
   return (
     <React.Fragment>
       <li className="user">

@@ -6,7 +6,7 @@
 
 ## **Abstract:**
 
-Building a React application that can search Github accounts using the Github Api. This app will display public information of all Github accounts with an easy to use GUI.
+Building a React application that can search Github accounts using the Github API. This app will display public information of all Github accounts with an easy to use GUI.
 
 <!-- INSTALLATION AREA -->
 
@@ -48,5 +48,6 @@ _This project will further showcase my web development skills in working with Re
 
     * Write a React app from scratch
     * Show knowledge of state and props
+    * Use React Hooks and The Context API
     * Implement ES6 features
     * Write modular, reusable code that follows SRP guidelines (Single Responsibility Principle)

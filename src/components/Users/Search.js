@@ -1,57 +1,54 @@
-import React, { Component } from "react";
+import React, { useState, useContext } from "react";
 import Users from "./Users";
-import Spinner from "./../Includes/Spinner"
-export default class Search extends Component {
-  state = {
-    value: ""
-  };
+import Spinner from "./../Includes/Spinner";
+import GithubContext from "../../context/github/githubContext";
 
-  handleValueChange = e => this.setState({ value: e.target.value });
+const Search = () => {
+  const githubContext = useContext(GithubContext);
 
-  handleFormSubmit = e => {
+  const { formSubmit, searchedUsers, loading } = githubContext;
+
+  const [value, setValue] = useState("");
+
+  const handleValueChange = e => setValue(e.target.value);
+
+  const handleFormSubmit = e => {
     e.preventDefault();
 
-    this.props.formSubmit(this.state.value);
+    formSubmit(value);
 
-    this.setState({ value: "" });
+    setValue("");
   };
 
-  render() {
-    const { searchedUsers, isLoading, getuser, getuserrepos } = this.props;
+  if (loading) {
+    return <Spinner />;
+  } else {
+    return (
+      <div className="search">
+        <form method="GET" onSubmit={handleFormSubmit}>
+          <input
+            type="text"
+            className="form-search"
+            placeholder="Search all users..."
+            onChange={handleValueChange}
+            value={value}
+          />
 
-    if (isLoading) {
-      return <Spinner />;
-    } else {
-      
-        return (
-          <div className="search">
-           
-            <form method="GET" onSubmit={this.handleFormSubmit}>
-              <input
-                type="text"
-                className="form-search"
-                placeholder="Search all users..."
-                onChange={this.handleValueChange}
-                value={this.state.value}
-              />
-
-              <input type="submit" className="form-button" value="Search" />
-            </form>
-            <ul className="searched-list">
-              {searchedUsers.map(user => (
-                <Users
-                  
-                  key={user.id}
-                  avatar={user.avatar_url}
-                  url={user.html_url}
-                  login={user.login}
-                  getuser={getuser}
-                />
-              ))}
-            </ul>
-          </div>
-        );
-      }
-    
+          <input type="submit" className="form-button" value="Search" />
+        </form>
+        <ul className="searched-list">
+          {searchedUsers.map(user => (
+            <Users
+              key={user.id}
+              avatar={user.avatar_url}
+              url={user.html_url}
+              login={user.login}
+            />
+          ))}
+        </ul>
+      </div>
+    );
   }
-}
+};
+
+export default Search;
