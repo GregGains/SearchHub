@@ -3,10 +3,12 @@
 # **Github Search**
 
 <!-- ABSTRACT / EXPLANATION  -->
-
 ## **Abstract:**
 
 Building a React application that can search Github accounts using the Github API. This app will display public information of all Github accounts with an easy to use GUI.
+
+## **Live App**
+  [Click Here](https://www.humphreycode.com/hubsearch/) 
 
 <!-- INSTALLATION AREA -->
 
